@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Educational Portfolio</title>
+    
+    <!-- DISABLE CACHE -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <!-- MINIFIED CSS -->
+    <link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h2>Leo<span>Portfolio</span></h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="active login-btn">Login</a></li>
+                <li><a href="register.html" class="register-btn">Register</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="auth-container">
+            <div class="auth-card">
+                <h2>Login to Your Account</h2>
+                <p class="subtitle"><strong>2nd Year BSIT | OLSHC-G</strong></p>
+                
+                <form id="loginForm" onsubmit="return validateLogin(event)">
+                    <div class="form-group">
+                        <label for="username">Username or Email:</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your email or username" required>
+                        <span class="error-message" id="usernameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                        <span class="error-message" id="passwordError"></span>
+                    </div>
+
+                    <!-- OTP Section -->
+                    <div id="otpSection" class="form-group hidden">
+                        <label for="otp">Enter OTP:</label>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="text" id="otp" maxlength="6" placeholder="6-digit code">
+                            <button type="button" onclick="sendOTP()" class="btn small-btn">Send OTP</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="remember"> Remember me
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn primary-btn">Login</button>
+                </form>
+
+                <p class="auth-link">Don't have an account? <a href="register.html">Register here</a></p>
+                
+                <!-- Google Auth Button -->
+                <div class="auth-alternatives">
+                    <p>Or login with:</p>
+                    <button onclick="googleAuth()" class="btn google-btn">Login with Google</button>
+                </div>
+                
+                <div id="loginMessage" class="message-box hidden"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Educational Portfolio | 2nd Year BSIT | Our Lady of the Sacred Heart College of Guimba INC.</p>
+        <p>Follow me: @leoxzc</p>
+    </footer>
+
+    <!-- MINIFIED JS -->
+    <script src="js/script.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Educational Portfolio</title>
+    
+    <!-- DISABLE CACHE -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <!-- MINIFIED CSS -->
+    <link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h2>Leo<span>Portfolio</span></h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="login-btn">Login</a></li>
+                <li><a href="register.html" class="register-btn">Register</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>About <span class="highlight">Me</span></h1>
+            <p>2nd Year BSIT Student Profile</p>
+        </section>
+
+        <section class="about-content">
+            <div class="profile-card">
+                <div class="profile-image">
+                    <img src="images/profile.jpg" alt="Profile Picture" onerror="this.src='https://via.placeholder.com/300'">
+                </div>
+                <div class="profile-info">
+                    <h2>Leonardo Raphael Dela Cruz</h2>
+                    <p class="subtitle">2nd Year BSIT | Aspiring Web Developer</p>
+                    
+                    <div class="info-section" onclick="toggleSection(this)">
+                        <h3>📋 Introduction <span class="toggle-icon">▼</span></h3>
+                        <div class="section-content">
+                            <p>I'm a 2nd Year BSIT student at Our Lady of the Sacred Heart College of Guimba INC. learning web development. This portfolio is part of my Web Systems course activity. I'm passionate about creating beautiful and functional websites that make a difference.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-section" onclick="toggleSection(this)">
+                        <h3>💻 Skills <span class="toggle-icon">▼</span></h3>
+                        <div class="section-content">
+                            <ul class="skills-list">
+                                <li>HTML5 & Semantic Markup</li>
+                                <li>CSS3 & Flexbox/Grid</li>
+                                <li>Responsive Web Design</li>
+                                <li>JavaScript & DOM Manipulation</li>
+                                <li>Basic PHP</li>
+                                <li>Web Accessibility</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="info-section" onclick="toggleSection(this)">
+                        <h3>📖 My Favorite Story <span class="toggle-icon">▼</span></h3>
+                        <div class="section-content">
+                            <p>"The Brave Little Seed" is my favorite story. It teaches us that even the smallest among us can achieve great things with courage and determination. The story of Lumo reminds me to keep pushing forward in my 2nd year studies.</p>
+                            <a href="index.html#story-section" class="read-more">Read the story →</a>
+                        </div>
+                    </div>
+
+                    <div class="info-section" onclick="toggleSection(this)">
+                        <h3>📱 Social Media <span class="toggle-icon">▼</span></h3>
+                        <div class="section-content">
+                            <p>Follow me: @leoxzc</p>
+                            <p>School: Our Lady of the Sacred Heart College of Guimba INC.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Educational Portfolio | 2nd Year BSIT | Our Lady of the Sacred Heart College of Guimba INC.</p>
+        <p>Follow me: @leoxzc</p>
+    </footer>
+
+    <!-- MINIFIED JS -->
+    <script src="js/script.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | My Educational Portfolio</title>
+    
+    <!-- DISABLE CACHE -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <!-- MINIFIED CSS -->
+    <link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h2>Leo<span>Portfolio</span></h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="login-btn">Login</a></li>
+                <li><a href="register.html" class="register-btn">Register</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to My <span class="highlight">Educational Portfolio</span></h1>
+                <p>2nd Year BSIT Student | Web Systems Course</p>
+                <div class="hero-buttons">
+                    <a href="#story-section" class="btn primary-btn">Read The Brave Little Seed</a>
+                    <a href="about.html" class="btn secondary-btn">Learn More About Me</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card" onclick="toggleCard(this)">
+                <h3>📚 Learning Objectives</h3>
+                <div class="card-content hidden">
+                    <ul>
+                        <li>Understand HTML5 structure and semantic tags</li>
+                        <li>Apply CSS3 layout techniques like Flexbox</li>
+                        <li>Create responsive and accessible web pages</li>
+                        <li>JavaScript DOM Manipulation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="feature-card" onclick="toggleCard(this)">
+                <h3>🎓 My Journey</h3>
+                <div class="card-content hidden">
+                    <p>2nd Year BSIT student learning web development. This portfolio showcases my progress in Web Systems course at Our Lady of the Sacred Heart College of Guimba INC.</p>
+                </div>
+            </div>
+
+            <div class="feature-card" onclick="toggleCard(this)">
+                <h3>📖 Featured Story</h3>
+                <div class="card-content hidden">
+                    <p>"The Brave Little Seed" - An inspiring tale of courage and growth.</p>
+                    <a href="#story-section" class="read-more">Read Now →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story Section -->
+        <section id="story-section" class="story-full">
+            <div class="story-header">
+                <h1>The Brave Little Seed</h1>
+                <p class="story-subtitle">An inspiring tale of courage and growth</p>
+            </div>
+
+            <div class="story-content">
+                <div class="story-image-large">
+                    <img src="images/brave-little-seed.jpg" alt="The Brave Little Seed" id="storyImg">
+                    <p class="image-caption">The Brave Little Seed - Lumo's Journey</p>
+                </div>
+
+                <!-- PART 1: The Beginning -->
+                <div class="story-part" onclick="toggleStoryPart(this)">
+                    <h3>🌱 The Beginning <span class="toggle-icon">▼</span></h3>
+                    <div class="story-part-content">
+                        <p>In a quiet village near a green forest lived a small seed named Lumo. He was tiny and brown, but inside him was a big dream.</p>
+                        <p>All the other seeds stayed inside a wooden box because they were afraid of the outside world.</p>
+                        <p>"The wind might be too strong," one seed said nervously.</p>
+                        <p>"And the rain might wash us away," another added.</p>
+                        <p>But Lumo believed something different.</p>
+                        <p>"How will we ever grow if we never try?" Lumo asked.</p>
+                        <p>One sunny morning, the gardener picked Lumo and gently planted him into the soil. It was dark underground, but Lumo stayed hopeful and patient.</p>
+                    </div>
+                </div>
+
+                <!-- PART 2: Growing with Courage -->
+                <div class="story-part" onclick="toggleStoryPart(this)">
+                    <h3>💧 Growing with Courage <span class="toggle-icon">▼</span></h3>
+                    <div class="story-part-content">
+                        <p>Days passed quietly under the soil. Lumo felt the soft drops of rain and the warmth of the sun above him.</p>
+                        <p>Slowly, he began to grow. First, a small root reached down into the earth. Then a tiny green stem started pushing upward.</p>
+                        <p>It was not easy. Sometimes the soil felt heavy, and sometimes the wind above sounded loud.</p>
+                        <p>But Lumo kept trying.</p>
+                        <p>Finally, one bright morning, he pushed through the soil and saw the sky for the first time.</p>
+                        <p>"The world is beautiful!" Lumo said happily as birds sang nearby and butterflies flew around the garden.</p>
+                    </div>
+                </div>
+
+                <!-- PART 3: The Bloom -->
+                <div class="story-part" onclick="toggleStoryPart(this)">
+                    <h3>🌼 The Bloom <span class="toggle-icon">▼</span></h3>
+                    <div class="story-part-content">
+                        <p>Weeks passed and Lumo continued growing stronger each day. His leaves became bigger and greener.</p>
+                        <p>Then one morning, something magical happened.</p>
+                        <p>A bright golden flower bloomed at the top of Lumo's stem. It shined under the sunlight like a tiny star in the garden.</p>
+                        <p>Bees visited his flower, birds rested near him, and children smiled when they saw the beautiful plant.</p>
+                        <p>The other seeds in the box saw Lumo and realized that being brave could lead to wonderful things.</p>
+                        <p>Soon, many new plants started growing in the garden.</p>
+                        <p><strong>Moral:</strong> Sometimes courage is the first step toward something beautiful.</p>
+                    </div>
+                </div>
+
+                <div class="story-navigation">
+                    <button onclick="previousPart()" class="btn secondary-btn">← Previous</button>
+                    <span id="partIndicator">Part 1 of 3</span>
+                    <button onclick="nextPart()" class="btn secondary-btn">Next →</button>
+                </div>
+
+                <div class="story-moral" id="moralSection" style="display: none;">
+                    <h3>🌟 Moral of the Story</h3>
+                    <p>"Sometimes courage is the first step toward something beautiful."</p>
+                    <p>Even the smallest seed can grow into something beautiful when it has the courage to try.</p>
+                    <button onclick="showQuiz()" class="btn primary-btn">Take Story Quiz</button>
+                </div>
+
+                <div class="story-quiz" id="storyQuiz" style="display: none;">
+                    <h3>📝 Story Quiz</h3>
+                    <p>What was the name of the brave little seed?</p>
+                    <div class="quiz-options">
+                        <button onclick="checkQuizAnswer('lumo')" class="quiz-option">Lumo</button>
+                        <button onclick="checkQuizAnswer('bato')" class="quiz-option">Bato</button>
+                        <button onclick="checkQuizAnswer('sikat')" class="quiz-option">Sikat</button>
+                    </div>
+                    <div id="quizResult"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Educational Portfolio | 2nd Year BSIT | Our Lady of the Sacred Heart College of Guimba INC.</p>
+        <p>Follow me: @leoxzc</p>
+    </footer>
+
+    <!-- MINIFIED JS -->
+    <script src="js/script.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Educational Portfolio</title>
+    
+    <!-- DISABLE CACHE -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <!-- MINIFIED CSS -->
+    <link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h2>Leo<span>Portfolio</span></h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="login-btn">Login</a></li>
+                <li><a href="register.html" class="active register-btn">Register</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="auth-container">
+            <div class="auth-card">
+                <h2>Create an Account</h2>
+                <p class="subtitle">2nd Year BSIT | OLSHC-G</p>
+                
+                <form id="registerForm" onsubmit="return validateRegistration(event)">
+                    <div class="form-group">
+                        <label for="fullname">Full Name:</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                        <span class="error-message" id="fullnameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reg-email">Email:</label>
+                        <input type="email" id="reg-email" name="email" placeholder="Enter your email" required>
+                        <span class="error-message" id="regEmailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reg-password">Password (min 6 chars, 1 uppercase, 1 number):</label>
+                        <input type="password" id="reg-password" name="password" placeholder="Enter password" required>
+                        <span class="error-message" id="regPasswordError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password:</label>
+                        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm password" required>
+                        <span class="error-message" id="confirmError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="terms" required> I agree to the Terms and Conditions
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn primary-btn">Register</button>
+                </form>
+
+                <p class="auth-link">Already have an account? <a href="login.html">Login here</a></p>
+                
+                <div id="registerMessage" class="message-box hidden"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Educational Portfolio | 2nd Year BSIT | Our Lady of the Sacred Heart College of Guimba INC.</p>
+        <p>Follow me: @leoxzc</p>
+    </footer>
+
+    <!-- MINIFIED JS -->
+    <script src="js/script.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Educational Portfolio</title>
+    
+    <!-- DISABLE CACHE -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <!-- MINIFIED CSS -->
+    <link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h2>Leo<span>Portfolio</span></h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="login-btn">Login</a></li>
+                <li><a href="register.html" class="register-btn">Register</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>My <span class="highlight">Projects</span></h1>
+            <p>2nd Year BSIT | Web Systems Course Projects</p>
+        </section>
+
+        <section class="projects-grid">
+            <div class="project-card">
+                <div class="project-badge">Featured</div>
+                <h3>User-Centered Educational Portfolio</h3>
+                <p>A comprehensive portfolio website showcasing academic work and personal projects with focus on user experience.</p>
+                <div class="project-tech">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                </div>
+                <button class="btn small-btn" onclick="showProjectDetails('project1')">View Details</button>
+                <div id="project1" class="project-details hidden">
+                    <p>This project focuses on creating an accessible and user-friendly portfolio with interactive elements and responsive design.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-badge">Interactive</div>
+                <h3>The Brave Little Seed - Interactive Story</h3>
+                <p>An engaging children's story webpage with interactive elements, toggle sections, and a comprehension quiz.</p>
+                <div class="project-tech">
+                    <span>HTML5</span>
+                    <span>CSS3 Animations</span>
+                    <span>DOM Manipulation</span>
+                </div>
+                <button class="btn small-btn" onclick="showProjectDetails('project2')">View Details</button>
+                <div id="project2" class="project-details hidden">
+                    <p>Created an immersive reading experience with toggle sections, navigation buttons, and interactive quiz. Available on the <a href="index.html#story-section">homepage</a>.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-badge">Security</div>
+                <h3>Login & Registration System with OTP</h3>
+                <p>A secure login and registration system with form validation, OTP authentication, and Google Auth integration.</p>
+                <div class="project-tech">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>localStorage</span>
+                </div>
+                <button class="btn small-btn" onclick="showProjectDetails('project3')">View Details</button>
+                <div id="project3" class="project-details hidden">
+                    <p>Implemented user authentication with form validation, password requirements, OTP simulation, and Google authentication button for enhanced security.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="filter-section">
+            <h3>Filter Projects</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterProjects('all')">All</button>
+                <button class="filter-btn" onclick="filterProjects('html')">HTML</button>
+                <button class="filter-btn" onclick="filterProjects('css')">CSS</button>
+                <button class="filter-btn" onclick="filterProjects('js')">JavaScript</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Educational Portfolio | 2nd Year BSIT | Our Lady of the Sacred Heart College of Guimba INC.</p>
+        <p>Follow me: @leoxzc</p>
+    </footer>
+
+    <!-- MINIFIED JS -->
+    <script src="js/script.min.js"></script>
+</body>
+</html>
