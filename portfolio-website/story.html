@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Brave Little Seed | Story</title>
+    <link rel="stylesheet" href="css/styles.min.css">
+    <style>
+        .story-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        .story-header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        .story-header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        .story-image {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .story-image img {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .story-part {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .story-part:hover {
+            transform: translateX(10px);
+            background: #f8f9ff;
+        }
+        .story-part h3 {
+            color: #4a6fa5;
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+        }
+        .story-content {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+        .story-moral {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .story-quiz {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .quiz-option {
+            background: #4a6fa5;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            margin: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .quiz-option:hover {
+            background: #3d5a8a;
+        }
+        .quiz-feedback {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        .correct-feedback {
+            background: #d4edda;
+            color: #155724;
+        }
+        .wrong-feedback {
+            background: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><h2>Leo<span>Portfolio</span></h2></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="login-btn">Login</a></li>
+                <li><a href="register.html" class="register-btn">Register</a></li>
+            </ul>
+            <div class="burger"><div></div><div></div><div></div></div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="story-container">
+            <div class="story-header">
+                <h1>The Brave Little Seed</h1>
+                <p>An inspiring tale of courage and growth</p>
+            </div>
+
+            <div class="story-image">
+                <img src="images/brave-little-seed.jpg" alt="The Brave Little Seed" onerror="this.src='https://via.placeholder.com/800x400?text=The+Brave+Little+Seed'">
+                <p><em>Lumo the brave little seed</em></p>
+            </div>
+
+            <div class="story-part" onclick="toggleStory(this)">
+                <h3>🌱 The Beginning <span>▼</span></h3>
+                <div class="story-content">
+                    <p>In a quiet village near a green forest lived a small seed named Lumo. He was tiny and brown, but inside him was a big dream. All the other seeds stayed inside a wooden box because they were afraid. But Lumo believed something different. One sunny morning, the gardener picked Lumo and gently planted him into the soil.</p>
+                </div>
+            </div>
+
+            <div class="story-part" onclick="toggleStory(this)">
+                <h3>💧 Growing with Courage <span>▼</span></h3>
+                <div class="story-content">
+                    <p>Days passed quietly under the soil. Lumo felt the soft drops of rain and the warmth of the sun. Slowly, he began to grow. It was not easy, but Lumo kept trying. Finally, one bright morning, he pushed through the soil and saw the sky for the first time. "The world is beautiful!" Lumo said happily.</p>
+                </div>
+            </div>
+
+            <div class="story-part" onclick="toggleStory(this)">
+                <h3>🌼 The Bloom <span>▼</span></h3>
+                <div class="story-content">
+                    <p>A bright golden flower bloomed at the top of Lumo's stem. The other seeds in the box saw Lumo and realized that being brave could lead to wonderful things. Soon, many new plants started growing in the garden.</p>
+                    <p><strong>Moral:</strong> Sometimes courage is the first step toward something beautiful.</p>
+                </div>
+            </div>
+
+            <div class="story-moral">
+                <h3>🌟 Moral of the Story</h3>
+                <p>"Sometimes courage is the first step toward something beautiful."</p>
+                <p>Even the smallest seed can grow into something beautiful when it has the courage to try.</p>
+            </div>
+
+            <div class="story-quiz">
+                <h3>📝 Story Quiz</h3>
+                <p>What was the name of the brave little seed?</p>
+                <button class="quiz-option" onclick="checkAnswer('lumo')">Lumo</button>
+                <button class="quiz-option" onclick="checkAnswer('bato')">Bato</button>
+                <button class="quiz-option" onclick="checkAnswer('sikat')">Sikat</button>
+                <div id="quizFeedback"></div>
+            </div>
+
+            <a href="projects.html" class="btn primary-btn" style="display: inline-block;">← Back to Projects</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Educational Portfolio | 2nd Year BSIT | OLSHC-G</p>
+    </footer>
+
+    <script>
+        function toggleStory(part) {
+            const content = part.querySelector('.story-content');
+            const icon = part.querySelector('span');
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                icon.innerHTML = '▼';
+            } else {
+                content.style.display = 'block';
+                icon.innerHTML = '▲';
+            }
+        }
+
+        function checkAnswer(answer) {
+            const feedback = document.getElementById('quizFeedback');
+            if (answer === 'lumo') {
+                feedback.innerHTML = '<div class="quiz-feedback correct-feedback">✓ Correct! The brave little seed was named Lumo. Great job!</div>';
+            } else {
+                feedback.innerHTML = '<div class="quiz-feedback wrong-feedback">✗ Oops! The correct answer is Lumo. Try again!</div>';
+            }
+        }
+
+        document.querySelector('.burger')?.addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Educational Portfolio</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h2>Leo<span>Portfolio</span></h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="login.html" class="login-btn">Login</a></li>
+                <li><a href="register.html" class="register-btn">Register</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Contact <span class="highlight">Information</span></h1>
+            <p>2nd Year BSIT Student</p>
+        </section>
+
+        <section class="contact-container">
+            <div class="contact-info">
+                <div class="info-card">
+                    <h3>📧 Email</h3>
+                    <p>leonardoraphaeldelacruz05@gmail.com</p>
+                </div>
+                <div class="info-card">
+                    <h3>🏫 School</h3>
+                    <p>Our Lady of the Sacred Heart College of Guimba INC.</p>
+                </div>
+                <div class="info-card">
+                    <h3>📱 Social Media</h3>
+                    <p>@leoxzc</p>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <h2>Get in Touch</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject" required>
+                        <span class="error-message" id="subjectError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <span class="error-message" id="messageError"></span>
+                    </div>
+
+                    <button type="submit" class="btn primary-btn">Send Message</button>
+                </form>
+                <div id="formSuccess" class="success-message hidden"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Educational Portfolio | 2nd Year BSIT | Our Lady of the Sacred Heart College of Guimba INC.</p>
+        <p>Follow me: @leoxzc</p>
+    </footer>
+
+    <script src="js/script.min.js"></script>
+    <script>
+        document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            document.getElementById('nameError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('subjectError').textContent = '';
+            document.getElementById('messageError').textContent = '';
+            
+            if (name.length < 2) {
+                document.getElementById('nameError').textContent = 'Name must be at least 2 characters';
+                isValid = false;
+            }
+            
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email address';
+                isValid = false;
+            }
+            
+            if (subject.length < 3) {
+                document.getElementById('subjectError').textContent = 'Subject must be at least 3 characters';
+                isValid = false;
+            }
+            
+            if (message.length < 10) {
+                document.getElementById('messageError').textContent = 'Message must be at least 10 characters';
+                isValid = false;
+            }
+            
+            if (isValid) {
+                const successMsg = document.getElementById('formSuccess');
+                successMsg.textContent = 'Message sent successfully!';
+                successMsg.classList.remove('hidden');
+                document.getElementById('contactForm').reset();
+                setTimeout(() => {
+                    successMsg.classList.add('hidden');
+                }, 3000);
+            }
+        });
+
+        document.querySelector('.burger')?.addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

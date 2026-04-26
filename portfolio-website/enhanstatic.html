@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanstatic Page | About Leonardo "Leo" Raphael M. Dela Cruz</title>
+    <link rel="stylesheet" href="css/styles.min.css">
+    <style>
+        .enhanstatic-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        .hero-enhanstatic {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            animation: fadeIn 1s ease;
+        }
+        .hero-enhanstatic h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .hero-enhanstatic p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .about-section {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            animation: slideUp 0.5s ease;
+        }
+        .about-section h2 {
+            color: #4a6fa5;
+            border-bottom: 2px solid #4a6fa5;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .about-section p {
+            line-height: 1.8;
+            color: #444;
+        }
+        .about-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .about-section li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        .about-section li:last-child {
+            border-bottom: none;
+        }
+        .about-section li::before {
+            content: "✓ ";
+            color: #4a6fa5;
+            font-weight: bold;
+        }
+        .fun-fact {
+            background: #f0f4ff;
+            padding: 1rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+        .fun-fact strong {
+            color: #4a6fa5;
+        }
+        .tech-badge {
+            display: inline-block;
+            background: #e9ecef;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 0.2rem;
+            color: #4a6fa5;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><h2>Leo<span>Portfolio</span></h2></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="login-btn">Login</a></li>
+                <li><a href="register.html" class="register-btn">Register</a></li>
+            </ul>
+            <div class="burger"><div></div><div></div><div></div></div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="enhanstatic-container">
+            <div class="hero-enhanstatic">
+                <h1>✨ About: Leonardo "Leo" Raphael M. Dela Cruz</h1>
+                <p>2nd Year BSIT Student | OLSHC-G</p>
+            </div>
+
+            <div class="about-section">
+                <h2>📖 Introduction</h2>
+                <p>My name is Leonardo Raphael, but most people call me Leo. I am an introvert person who prefers silence and simple conversations.</p>
+            </div>
+
+            <div class="about-section">
+                <h2>🎓 Background</h2>
+                <p>I am a 2nd Year BSIT student who is still learning the basics of programming and web development. I may be quiet, but I am willing to learn.</p>
+            </div>
+
+            <div class="about-section">
+                <h2>📚 My Major Subjects This 2nd Semester</h2>
+                <ul>
+                    <li>IM102 – Advance Database System</li>
+                    <li>IPT101 – Integrative Programming</li>
+                    <li>NET101 – Networking 1</li>
+                    <li>WS101 – Web Systems and Technologies 1</li>
+                    <li>MS102 – Quantitative Methods</li>
+                    <li>PF102 – Event-Driven Programming</li>
+                </ul>
+            </div>
+
+            <div class="about-section">
+                <h2>🎵 My Hobbies</h2>
+                <ul>
+                    <li>Listening to Christian songs</li>
+                    <li>Playing musical instruments</li>
+                    <li>Watching drama videos</li>
+                    <li>Learning basic IT skills</li>
+                </ul>
+            </div>
+
+            <div class="about-section">
+                <h2>💭 Fun Facts About My Friends</h2>
+                <div class="fun-fact">
+                    <strong>John Patrick Del Campo</strong><br>
+                    He is good at solving Rubik's Cube.
+                </div>
+                <div class="fun-fact">
+                    <strong>Humphrey Roy Del Campo</strong><br>
+                    He plays bass guitar in our church.
+                </div>
+                <p style="margin-top: 1rem;"><em>They are both my cousins.</em></p>
+            </div>
+
+            <div class="about-section">
+                <h2>🛠️ Technologies Used in This Page</h2>
+                <div>
+                    <span class="tech-badge">HTML5</span>
+                    <span class="tech-badge">CSS3</span>
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">CSS Animations</span>
+                    <span class="tech-badge">Responsive Design</span>
+                    <span class="tech-badge">Flexbox/Grid</span>
+                </div>
+            </div>
+
+            <a href="projects.html" class="btn primary-btn back-btn">← Back to Projects</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Educational Portfolio | 2nd Year BSIT | Our Lady of the Sacred Heart College of Guimba INC.</p>
+        <p>Follow me: @leoxzc</p>
+    </footer>
+
+    <script>
+        document.querySelector('.burger')?.addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | My Educational Portfolio</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h2>Leo<span>Portfolio</span></h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="login-btn">Login</a></li>
+                <li><a href="register.html" class="register-btn">Register</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg.jpg'); background-size: cover; background-position: center;">
+            <div class="hero-content">
+                <h1>Welcome to My <span class="highlight">Educational Portfolio</span></h1>
+                <p>2nd Year BSIT Student | Web Systems Course</p>
+                <div class="hero-buttons">
+                    <a href="projects.html" class="btn primary-btn">View My Projects</a>
+                    <a href="about.html" class="btn secondary-btn">Learn More About Me</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card" onclick="toggleCard(this)">
+                <h3>📚 Learning Objectives</h3>
+                <div class="card-content hidden">
+                    <ul>
+                        <li>Understand HTML5 structure and semantic tags</li>
+                        <li>Apply CSS3 layout techniques like Flexbox</li>
+                        <li>Create responsive and accessible web pages</li>
+                        <li>JavaScript DOM Manipulation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="feature-card" onclick="toggleCard(this)">
+                <h3>🎓 My Journey</h3>
+                <div class="card-content hidden">
+                    <p>2nd Year BSIT student learning web development. This portfolio showcases my progress in Web Systems course at Our Lady of the Sacred Heart College of Guimba INC.</p>
+                </div>
+            </div>
+
+            <div class="feature-card" onclick="toggleCard(this)">
+                <h3>💻 My Skills</h3>
+                <div class="card-content hidden">
+                    <ul>
+                        <li>HTML5 & Semantic Markup</li>
+                        <li>CSS3 & Flexbox/Grid</li>
+                        <li>Responsive Web Design</li>
+                        <li>JavaScript & DOM Manipulation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Educational Portfolio | 2nd Year BSIT | Our Lady of the Sacred Heart College of Guimba INC.</p>
+        <p>Follow me: @leoxzc</p>
+    </footer>
+
+    <script src="js/script.min.js"></script>
+    <script>
+        function toggleCard(card) {
+            const content = card.querySelector('.card-content');
+            if (content) {
+                content.classList.toggle('hidden');
+                content.classList.toggle('show');
+            }
+        }
+
+        document.querySelector('.burger')?.addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

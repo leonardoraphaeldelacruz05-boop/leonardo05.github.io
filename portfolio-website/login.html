@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Educational Portfolio</title>
+    <link rel="stylesheet" href="css/styles.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+        }
+        .auth-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 450px;
+            margin: 1rem;
+        }
+        .auth-card h2 {
+            text-align: center;
+            color: #4a6fa5;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #4a6fa5;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .btn {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: #4a6fa5;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #3d5a8a;
+        }
+        .auth-link {
+            text-align: center;
+            margin-top: 1.2rem;
+        }
+        .auth-link a {
+            color: #4a6fa5;
+            text-decoration: none;
+        }
+        .auth-alternatives {
+            text-align: center;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+        .google-btn {
+            background: #db4437;
+            color: white;
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+        .message-box {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .message-box.success {
+            background: #d4edda;
+            color: #155724;
+        }
+        .message-box.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .hidden {
+            display: none;
+        }
+        .error-message {
+            color: #dc3545;
+            font-size: 0.75rem;
+            margin-top: 0.3rem;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-card">
+        <h2>Login to Your Account</h2>
+        <p class="subtitle"><strong>2nd Year BSIT | OLSHC-G</strong></p>
+        
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username or Email:</label>
+                <input type="text" id="username" placeholder="Enter your email or username">
+                <span class="error-message" id="usernameError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter your password">
+                <span class="error-message" id="passwordError"></span>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="remember">
+                <label for="remember">Remember me</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+
+        <p class="auth-link">Don't have an account? <a href="register.html">Register here</a></p>
+        
+        <div class="auth-alternatives">
+            <p>Or login with:</p>
+            <button onclick="googleAuth()" class="btn google-btn">Login with Google</button>
+        </div>
+        
+        <div id="loginMessage" class="message-box hidden"></div>
+    </div>
+
+    <script src="js/script.min.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+            const messageBox = document.getElementById('loginMessage');
+            
+            messageBox.classList.add('hidden');
+            document.getElementById('usernameError').textContent = '';
+            document.getElementById('passwordError').textContent = '';
+            
+            if (username.length < 1) {
+                document.getElementById('usernameError').textContent = 'Please enter username or email';
+                return;
+            }
+            if (password.length < 1) {
+                document.getElementById('passwordError').textContent = 'Please enter password';
+                return;
+            }
+            
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            const user = users.find(u => 
+                (u.email === username || u.username === username || u.fullname === username) && 
+                u.password === password
+            );
+            
+            if (user) {
+                messageBox.textContent = 'Login successful! Welcome ' + user.fullname + '!';
+                messageBox.classList.add('success');
+                messageBox.classList.remove('hidden');
+                
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                localStorage.setItem('isLoggedIn', 'true');
+                
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1500);
+            } else {
+                messageBox.textContent = 'Invalid username/email or password.';
+                messageBox.classList.add('error');
+                messageBox.classList.remove('hidden');
+            }
+        });
+
+        function googleAuth() {
+            alert('Google authentication demo. Redirecting to home...');
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
