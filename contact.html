@@ -4,13 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Educational Portfolio</title>
-    
-    <!-- DISABLE CACHE -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    
-    <!-- MINIFIED CSS -->
     <link rel="stylesheet" href="css/styles.min.css">
 </head>
 <body>
@@ -59,7 +53,7 @@
 
             <div class="contact-form-container">
                 <h2>Get in Touch</h2>
-                <form id="contactForm" onsubmit="return validateContactForm(event)">
+                <form id="contactForm">
                     <div class="form-group">
                         <label for="name">Name:</label>
                         <input type="text" id="name" name="name" required>
@@ -96,7 +90,57 @@
         <p>Follow me: @leoxzc</p>
     </footer>
 
-    <!-- MINIFIED JS -->
     <script src="js/script.min.js"></script>
+    <script>
+        document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            document.getElementById('nameError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('subjectError').textContent = '';
+            document.getElementById('messageError').textContent = '';
+            
+            if (name.length < 2) {
+                document.getElementById('nameError').textContent = 'Name must be at least 2 characters';
+                isValid = false;
+            }
+            
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email address';
+                isValid = false;
+            }
+            
+            if (subject.length < 3) {
+                document.getElementById('subjectError').textContent = 'Subject must be at least 3 characters';
+                isValid = false;
+            }
+            
+            if (message.length < 10) {
+                document.getElementById('messageError').textContent = 'Message must be at least 10 characters';
+                isValid = false;
+            }
+            
+            if (isValid) {
+                const successMsg = document.getElementById('formSuccess');
+                successMsg.textContent = 'Message sent successfully!';
+                successMsg.classList.remove('hidden');
+                document.getElementById('contactForm').reset();
+                setTimeout(() => {
+                    successMsg.classList.add('hidden');
+                }, 3000);
+            }
+        });
+
+        document.querySelector('.burger')?.addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

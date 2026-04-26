@@ -1,0 +1,52 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "title": "Advanced Login Page + Registration Form",
+            "description": "A secure authentication system with form validation, password requirements (min 6 chars, 1 uppercase, 1 number), remember me functionality, and Google login demo.",
+            "technologies": ["HTML5", "CSS3", "JavaScript", "localStorage"],
+            "category": "frontend",
+            "featured": true
+        },
+        {
+            "id": 2,
+            "title": "IT Lab - Scripted Assistant & Quiz",
+            "description": "An interactive IT learning tool featuring a Scripted Assistant with 3 IT questions (CPU, RAM, HTML) and a 30-second timed quiz with 5 questions.",
+            "technologies": ["HTML5", "CSS3", "JavaScript", "Timer Functions"],
+            "category": "interactive",
+            "featured": true
+        },
+        {
+            "id": 3,
+            "title": "The Brave Little Seed - Interactive Story",
+            "description": "An engaging children's story webpage with collapsible story sections, navigation buttons, and a comprehension quiz with instant feedback.",
+            "technologies": ["HTML5", "CSS3", "JavaScript", "DOM Manipulation"],
+            "category": "interactive",
+            "featured": true
+        },
+        {
+            "id": 4,
+            "title": "My Enhanstatic Page",
+            "description": "An enhanced interactive page featuring personal background information, major subjects, hobbies, and fun facts about friends with smooth animations.",
+            "technologies": ["HTML5", "CSS3", "JavaScript", "CSS Animations"],
+            "category": "frontend",
+            "featured": false
+        },
+        {
+            "id": 5,
+            "title": "Contact Form with Validation",
+            "description": "A fully functional contact form with real-time validation for name, email, subject, and message fields with dynamic success feedback.",
+            "technologies": ["HTML5", "CSS3", "JavaScript", "Form Validation"],
+            "category": "frontend",
+            "featured": false
+        },
+        {
+            "id": 6,
+            "title": "Responsive Educational Portfolio",
+            "description": "A complete portfolio website showcasing academic work, technical skills, and interactive features with fully responsive design.",
+            "technologies": ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
+            "category": "frontend",
+            "featured": true
+        }
+    ]
+}

@@ -4,13 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Educational Portfolio</title>
-    
-    <!-- DISABLE CACHE -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    
-    <!-- MINIFIED CSS -->
     <link rel="stylesheet" href="css/styles.min.css">
 </head>
 <body>
@@ -42,60 +36,113 @@
         </section>
 
         <section class="projects-grid">
+            <!-- Project 1: Login & Registration -->
             <div class="project-card">
                 <div class="project-badge">Featured</div>
-                <h3>User-Centered Educational Portfolio</h3>
-                <p>A comprehensive portfolio website showcasing academic work and personal projects with focus on user experience.</p>
-                <div class="project-tech">
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>JavaScript</span>
-                </div>
-                <button class="btn small-btn" onclick="showProjectDetails('project1')">View Details</button>
-                <div id="project1" class="project-details hidden">
-                    <p>This project focuses on creating an accessible and user-friendly portfolio with interactive elements and responsive design.</p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-badge">Interactive</div>
-                <h3>The Brave Little Seed - Interactive Story</h3>
-                <p>An engaging children's story webpage with interactive elements, toggle sections, and a comprehension quiz.</p>
-                <div class="project-tech">
-                    <span>HTML5</span>
-                    <span>CSS3 Animations</span>
-                    <span>DOM Manipulation</span>
-                </div>
-                <button class="btn small-btn" onclick="showProjectDetails('project2')">View Details</button>
-                <div id="project2" class="project-details hidden">
-                    <p>Created an immersive reading experience with toggle sections, navigation buttons, and interactive quiz. Available on the <a href="index.html#story-section">homepage</a>.</p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-badge">Security</div>
-                <h3>Login & Registration System with OTP</h3>
-                <p>A secure login and registration system with form validation, OTP authentication, and Google Auth integration.</p>
+                <h3>🔐 Advanced Login & Registration</h3>
+                <p>A secure authentication system with form validation, password requirements, and localStorage persistence.</p>
                 <div class="project-tech">
                     <span>HTML5</span>
                     <span>CSS3</span>
                     <span>JavaScript</span>
                     <span>localStorage</span>
                 </div>
-                <button class="btn small-btn" onclick="showProjectDetails('project3')">View Details</button>
-                <div id="project3" class="project-details hidden">
-                    <p>Implemented user authentication with form validation, password requirements, OTP simulation, and Google authentication button for enhanced security.</p>
+                <button class="btn small-btn" onclick="location.href='login.html'">Login</button>
+                <button class="btn small-btn" onclick="location.href='register.html'">Register</button>
+                <button class="btn small-btn" onclick="showProjectDetails('project1')">Details</button>
+                <div id="project1" class="project-details hidden">
+                    <p>Modern login/registration system with real-time validation, password strength checking, remember me functionality, and Google authentication demo.</p>
                 </div>
             </div>
-        </section>
 
-        <section class="filter-section">
-            <h3>Filter Projects</h3>
-            <div class="filter-buttons">
-                <button class="filter-btn active" onclick="filterProjects('all')">All</button>
-                <button class="filter-btn" onclick="filterProjects('html')">HTML</button>
-                <button class="filter-btn" onclick="filterProjects('css')">CSS</button>
-                <button class="filter-btn" onclick="filterProjects('js')">JavaScript</button>
+            <!-- Project 2: Story Page -->
+            <div class="project-card">
+                <div class="project-badge">Interactive</div>
+                <h3>📖 The Brave Little Seed - Story Page</h3>
+                <p>An engaging children's story with interactive toggle sections, navigation, and comprehension quiz.</p>
+                <div class="project-tech">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>DOM</span>
+                </div>
+                <button class="btn small-btn" onclick="location.href='story.html'">Read Story</button>
+                <button class="btn small-btn" onclick="showProjectDetails('project2')">Details</button>
+                <div id="project2" class="project-details hidden">
+                    <p>Features collapsible story sections, previous/next navigation, moral section, and interactive quiz about the brave little seed named Lumo.</p>
+                </div>
+            </div>
+
+            <!-- Project 3: IT Lab -->
+            <div class="project-card">
+                <div class="project-badge">Interactive</div>
+                <h3>💻 IT Lab - Scripted Assistant & Quiz</h3>
+                <p>IT learning tool with Scripted Assistant Q&A and timed IT Quiz Challenge.</p>
+                <div class="project-tech">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>Timer</span>
+                </div>
+                <button class="btn small-btn" onclick="location.href='itlab.html'">Open IT Lab</button>
+                <button class="btn small-btn" onclick="showProjectDetails('project3')">Details</button>
+                <div id="project3" class="project-details hidden">
+                    <p>Includes Scripted Assistant with 3 IT questions (CPU, RAM, HTML) and a 30-second timed quiz with 5 IT questions.</p>
+                </div>
+            </div>
+
+            <!-- Project 4: Enhanstatic Page -->
+            <div class="project-card">
+                <div class="project-badge">New</div>
+                <h3>✨ My Enhanstatic Page</h3>
+                <p>Advanced interactive page with dynamic content, animations, and enhanced user experience featuring my personal information.</p>
+                <div class="project-tech">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>Animations</span>
+                </div>
+                <button class="btn small-btn" onclick="location.href='enhanstatic.html'">View Page</button>
+                <button class="btn small-btn" onclick="showProjectDetails('project4')">Details</button>
+                <div id="project4" class="project-details hidden">
+                    <p>Features smooth animations, dynamic content loading, interactive cards, and personal information including background, major subjects, hobbies, and fun facts about friends.</p>
+                </div>
+            </div>
+
+            <!-- Project 5: Contact Form -->
+            <div class="project-card">
+                <div class="project-badge">Complete</div>
+                <h3>📧 Contact Form with Validation</h3>
+                <p>Interactive contact form with real-time validation and dynamic success feedback.</p>
+                <div class="project-tech">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>Validation</span>
+                </div>
+                <button class="btn small-btn" onclick="location.href='contact.html'">Contact Me</button>
+                <button class="btn small-btn" onclick="showProjectDetails('project5')">Details</button>
+                <div id="project5" class="project-details hidden">
+                    <p>Fully functional contact form with client-side validation for name, email, subject, and message fields.</p>
+                </div>
+            </div>
+
+            <!-- Project 6: Portfolio Website -->
+            <div class="project-card">
+                <div class="project-badge">Featured</div>
+                <h3>🎓 Enhanced Educational Portfolio</h3>
+                <p>Complete portfolio website showcasing academic work, skills, projects, and interactive features.</p>
+                <div class="project-tech">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>Responsive</span>
+                </div>
+                <button class="btn small-btn" onclick="location.href='index.html'">View Home</button>
+                <button class="btn small-btn" onclick="showProjectDetails('project6')">Details</button>
+                <div id="project6" class="project-details hidden">
+                    <p>Enhanced portfolio includes fully responsive design, interactive features, contact form with validation, and professional layout.</p>
+                </div>
             </div>
         </section>
     </main>
@@ -105,7 +152,18 @@
         <p>Follow me: @leoxzc</p>
     </footer>
 
-    <!-- MINIFIED JS -->
     <script src="js/script.min.js"></script>
+    <script>
+        function showProjectDetails(id) {
+            const details = document.getElementById(id);
+            if (details) {
+                details.classList.toggle('hidden');
+            }
+        }
+
+        document.querySelector('.burger')?.addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

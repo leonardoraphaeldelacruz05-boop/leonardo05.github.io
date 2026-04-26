@@ -4,14 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me | Educational Portfolio</title>
-    
-    <!-- DISABLE CACHE -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    
-    <!-- MINIFIED CSS -->
     <link rel="stylesheet" href="css/styles.min.css">
+    <style>
+        .about-container {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        .about-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .about-header h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        .about-header .subtitle {
+            color: #666;
+            font-size: 1rem;
+        }
+        .profile-image {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .profile-image img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #4a6fa5;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .profile-info {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .profile-info h2 {
+            color: #4a6fa5;
+            font-size: 1.8rem;
+            margin-bottom: 0.3rem;
+        }
+        .profile-info p {
+            color: #666;
+            font-size: 1rem;
+        }
+        .about-section {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            background: white;
+            transition: background 0.3s;
+            border-left: 4px solid transparent;
+        }
+        .section-header:hover {
+            background: #f8f9ff;
+            border-left-color: #4a6fa5;
+        }
+        .section-header .icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+        .section-header h3 {
+            flex: 1;
+            margin: 0;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        .section-header .toggle-icon {
+            font-size: 1.2rem;
+            color: #999;
+            transition: transform 0.3s;
+        }
+        .section-header .toggle-icon.rotated {
+            transform: rotate(180deg);
+        }
+        .section-header .checkbox {
+            width: 20px;
+            height: 20px;
+            margin-right: 1rem;
+            cursor: pointer;
+            accent-color: #4a6fa5;
+        }
+        .section-content {
+            display: none;
+            padding: 1rem 1.5rem 1.5rem 1.5rem;
+            border-top: 1px solid #eee;
+            background: #fafafa;
+        }
+        .section-content.show {
+            display: block;
+        }
+        .section-content p {
+            line-height: 1.8;
+            color: #444;
+        }
+        .section-content ul {
+            padding-left: 1.5rem;
+        }
+        .section-content li {
+            padding: 0.3rem 0;
+            color: #444;
+        }
+        .read-more {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: #4a6fa5;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .read-more:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -36,59 +150,83 @@
     </header>
 
     <main>
-        <section class="page-header">
-            <h1>About <span class="highlight">Me</span></h1>
-            <p>2nd Year BSIT Student Profile</p>
-        </section>
+        <div class="about-container">
+            <div class="about-header">
+                <h1>About Me</h1>
+                <p class="subtitle">2nd Year BSIT Student Profile</p>
+            </div>
 
-        <section class="about-content">
-            <div class="profile-card">
-                <div class="profile-image">
-                    <img src="images/profile.jpg" alt="Profile Picture" onerror="this.src='https://via.placeholder.com/300'">
+            <!-- PROFILE IMAGE -->
+            <div class="profile-image">
+                <img src="images/profile.jpg" alt="Profile Picture" onerror="this.src='https://via.placeholder.com/180x180?text=Profile'">
+            </div>
+
+            <div class="profile-info">
+                <h2>Leonardo Raphael Dela Cruz</h2>
+                <p>2nd Year BSIT | Aspiring Web Developer</p>
+            </div>
+
+            <!-- INTRODUCTION SECTION -->
+            <div class="about-section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <input type="checkbox" class="checkbox" onclick="event.stopPropagation()">
+                    <span class="icon">📋</span>
+                    <h3>Introduction</h3>
+                    <span class="toggle-icon">▼</span>
                 </div>
-                <div class="profile-info">
-                    <h2>Leonardo Raphael Dela Cruz</h2>
-                    <p class="subtitle">2nd Year BSIT | Aspiring Web Developer</p>
-                    
-                    <div class="info-section" onclick="toggleSection(this)">
-                        <h3>📋 Introduction <span class="toggle-icon">▼</span></h3>
-                        <div class="section-content">
-                            <p>I'm a 2nd Year BSIT student at Our Lady of the Sacred Heart College of Guimba INC. learning web development. This portfolio is part of my Web Systems course activity. I'm passionate about creating beautiful and functional websites that make a difference.</p>
-                        </div>
-                    </div>
-
-                    <div class="info-section" onclick="toggleSection(this)">
-                        <h3>💻 Skills <span class="toggle-icon">▼</span></h3>
-                        <div class="section-content">
-                            <ul class="skills-list">
-                                <li>HTML5 & Semantic Markup</li>
-                                <li>CSS3 & Flexbox/Grid</li>
-                                <li>Responsive Web Design</li>
-                                <li>JavaScript & DOM Manipulation</li>
-                                <li>Basic PHP</li>
-                                <li>Web Accessibility</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="info-section" onclick="toggleSection(this)">
-                        <h3>📖 My Favorite Story <span class="toggle-icon">▼</span></h3>
-                        <div class="section-content">
-                            <p>"The Brave Little Seed" is my favorite story. It teaches us that even the smallest among us can achieve great things with courage and determination. The story of Lumo reminds me to keep pushing forward in my 2nd year studies.</p>
-                            <a href="index.html#story-section" class="read-more">Read the story →</a>
-                        </div>
-                    </div>
-
-                    <div class="info-section" onclick="toggleSection(this)">
-                        <h3>📱 Social Media <span class="toggle-icon">▼</span></h3>
-                        <div class="section-content">
-                            <p>Follow me: @leoxzc</p>
-                            <p>School: Our Lady of the Sacred Heart College of Guimba INC.</p>
-                        </div>
-                    </div>
+                <div class="section-content">
+                    <p>I'm a 2nd Year BSIT student at Our Lady of the Sacred Heart College of Guimba INC. learning web development. This portfolio is part of my Web Systems course activity. I'm passionate about creating beautiful and functional websites that make a difference.</p>
                 </div>
             </div>
-        </section>
+
+            <!-- SKILLS SECTION -->
+            <div class="about-section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <input type="checkbox" class="checkbox" checked onclick="event.stopPropagation()">
+                    <span class="icon">💻</span>
+                    <h3>Skills</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="section-content">
+                    <ul>
+                        <li>HTML5 & Semantic Markup</li>
+                        <li>CSS3 & Flexbox/Grid</li>
+                        <li>Responsive Web Design</li>
+                        <li>JavaScript & DOM Manipulation</li>
+                        <li>Basic PHP</li>
+                        <li>Web Accessibility</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- MY FAVORITE STORY SECTION -->
+            <div class="about-section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <input type="checkbox" class="checkbox" onclick="event.stopPropagation()">
+                    <span class="icon">📖</span>
+                    <h3>My Favorite Story</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="section-content">
+                    <p>"The Brave Little Seed" is my favorite story. It teaches us that even the smallest among us can achieve great things with courage and determination.</p>
+                    <a href="story.html" class="read-more">Read the story →</a>
+                </div>
+            </div>
+
+            <!-- SOCIAL MEDIA SECTION -->
+            <div class="about-section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <input type="checkbox" class="checkbox" onclick="event.stopPropagation()">
+                    <span class="icon">📱</span>
+                    <h3>Social Media</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="section-content">
+                    <p>Follow me: @leoxzc</p>
+                    <p>School: Our Lady of the Sacred Heart College of Guimba INC.</p>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>
@@ -96,7 +234,23 @@
         <p>Follow me: @leoxzc</p>
     </footer>
 
-    <!-- MINIFIED JS -->
     <script src="js/script.min.js"></script>
+    <script>
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.toggle-icon');
+            
+            if (content) {
+                content.classList.toggle('show');
+                if (icon) {
+                    icon.classList.toggle('rotated');
+                }
+            }
+        }
+
+        document.querySelector('.burger')?.addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
